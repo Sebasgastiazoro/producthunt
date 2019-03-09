@@ -13,7 +13,7 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
-
+    <link href="{% static 'open-iconic/font/css/open-iconic-bootstrap.css' %}" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -46,6 +46,9 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
         {% if user.is_authenticated %}
+        <li class="nav-item">
+        <a class="nav-link" href="{% url 'create' %}"><span class="oi oi-plus"></span></a>
+      </li>
       <li class="nav-item">
           <a class="nav-link" href="javascript:{document.getElementById('logout').submit()}">Logout</a>
           <form id="logout" method="post" action="{% url 'logout' %}">
